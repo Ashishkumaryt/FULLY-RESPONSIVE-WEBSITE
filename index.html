@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quick Delivery Animated</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Quick Delivery</h1>
+      <nav>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#order" class="nav-link">Place Order</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero fade-in">
+    <div class="container">
+      <h2>Fast & Reliable Delivery at Your Doorstep</h2>
+      <p>Place your order now and get your package delivered swiftly.</p>
+      <a href="#order" class="btn btn-primary">Order Now</a>
+    </div>
+  </section>
+
+  <section id="order" class="order-section fade-in">
+    <div class="container">
+      <h2>Place Your Order</h2>
+      <form id="orderForm" class="order-form">
+        <div class="form-group">
+          <input type="text" id="name" required />
+          <label for="name">Full Name</label>
+          <span class="underline"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="phone" required />
+          <label for="phone">Phone Number</label>
+          <span class="underline"></span>
+        </div>
+
+        <div class="form-group">
+          <textarea id="address" rows="3" required></textarea>
+          <label for="address">Delivery Address</label>
+          <span class="underline"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="package" required />
+          <label for="package">Package Details</label>
+          <span class="underline"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">
+          <span class="btn-text">Submit Order</span>
+          <span class="btn-spinner hidden"></span>
+        </button>
+      </form>
+      <p id="responseMsg" class="response-msg"></p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section fade-in">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: support@quickdelivery.com</p>
+      <p>Phone: +91 12345 67890</p>
+      <p>Address: 123, Delivery Street, Your City</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Quick Delivery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
