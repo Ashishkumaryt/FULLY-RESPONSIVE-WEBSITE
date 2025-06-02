@@ -1,0 +1,344 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background-color: rgba(0, 123, 255, 0.85);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  cursor: default;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #ffc107;
+  transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffc107;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* Burger menu for mobile */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  color: white;
+  padding: 6rem 0 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 100px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  animation: slideDown 1s ease forwards;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  animation: slideUp 1s ease forwards 0.5s;
+}
+
+.btn {
+  background-color: #ffc107;
+  color: #222;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background-color: #e0a800;
+  box-shadow: 0 6px 15px rgba(224, 168, 0, 0.8);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px 3px #ffc107aa;
+}
+
+.btn-primary {
+  display: inline-block;
+}
+
+/* Order Section */
+.order-section {
+  background: white;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  border-radius: 15px;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.order-section h2 {
+  color: #007bff;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Form Groups */
+.order-form .form-group {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.order-form input[type="text"],
+.order-form input[type="tel"],
+.order-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 1.1rem;
+  padding: 10px 5px 8px;
+  background: transparent;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.order-form input[type="text"]:focus,
+.order-form input[type="tel"]:focus,
+.order-form textarea:focus {
+  outline: none;
+  border-bottom-color: #007bff;
+}
+
+/* Floating Labels */
+.order-form label {
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  color: #999;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.order-form input:focus + label,
+.order-form input:not(:placeholder-shown) + label,
+.order-form textarea:focus + label,
+.order-form textarea:not(:placeholder-shown) + label {
+  top: -15px;
+  font-size: 0.85rem;
+  color: #007bff;
+}
+
+/* Underline animation */
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.order-form input:focus ~ .underline,
+.order-form textarea:focus ~ .underline {
+  width: 100%;
+}
+
+/* Submit Button with spinner */
+.btn-submit {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-right: 3.5rem;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-spinner {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #007bff;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #bbb;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg) translateY(-50%);}
+  100% { transform: rotate(360deg) translateY(-50%);}
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 123, 255, 0.95);
+    position: absolute;
+    right: 1rem;
+    top: 60px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 180px;
+  }
+  nav.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
